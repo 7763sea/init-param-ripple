@@ -1,3 +1,6 @@
+根据项目ripple-cs 修改的，使用 子项目 Crack-ripple 编译后可以进行初始化参数
+
+
 ripple-cs
 =========
 
