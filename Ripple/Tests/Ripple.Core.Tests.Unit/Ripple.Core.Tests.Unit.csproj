@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3D462B5-2092-4C3B-B733-C4E011852D91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ripple.Core.Tests.Unit</RootNamespace>
+    <AssemblyName>Ripple.Core.Tests.Unit</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Coretypes\CurrencyTests.cs" />
+    <Compile Include="Core\Coretypes\Hash\Hash256Tests.cs" />
+    <Compile Include="Core\Coretypes\PathSetTest.cs" />
+    <Compile Include="Core\Coretypes\QualityTest.cs" />
+    <Compile Include="Core\Coretypes\RippleDateTests.cs" />
+    <Compile Include="Core\Coretypes\StArrayTest.cs" />
+    <Compile Include="Core\Coretypes\UInt\UIntTests.cs" />
+    <Compile Include="Core\Coretypes\Vector256Test.cs" />
+    <Compile Include="Core\Fields\FieldSymbolicsTest.cs" />
+    <Compile Include="Core\Formats\SleFormatTest.cs" />
+    <Compile Include="Core\Serialized\BytesListTest.cs" />
+    <Compile Include="Core\AccountIdTest.cs" />
+    <Compile Include="Core\AmountTest.cs" />
+    <Compile Include="Core\HashTest.cs" />
+    <Compile Include="Core\KeyPairTest.cs" />
+    <Compile Include="Core\Types\Known\Sle\OfferTest.cs" />
+    <Compile Include="Core\Types\Ledger\LedgerTest.cs" />
+    <Compile Include="Core\SeedTest.cs" />
+    <Compile Include="Core\Types\Shamap\ShaMapTest.cs" />
+    <Compile Include="Core\StObjectTest.cs" />
+    <Compile Include="Core\TestFixtures.cs" />
+    <Compile Include="Crypto\SjclJson\JSEscapeTest.cs" />
+    <Compile Include="Crypto\SjclJson\JSONEncryptTest.cs" />
+    <Compile Include="Encodings\B58IdentifierTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BouncyCastle\BouncyCastle.csproj">
+      <Project>{38872a5f-e87e-4fad-b109-8eb7b2e6a4a0}</Project>
+      <Name>BouncyCastle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Deveel.Math\Deveel.Math.csproj">
+      <Project>{dab16486-ed07-4d2d-8e09-db259c583f02}</Project>
+      <Name>Deveel.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ripple.Core\Ripple.Core.csproj">
+      <Project>{b9110ba7-e156-40f8-b54d-e4c2a7aadd01}</Project>
+      <Name>Ripple.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
